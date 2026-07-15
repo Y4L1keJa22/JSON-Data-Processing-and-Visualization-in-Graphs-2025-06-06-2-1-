@@ -3,6 +3,7 @@ This Project was made for an individual Class Project nearing the end of my 2nd 
 Last Update: 2025-06-06 17:00:00
 
 WebPage Project that uses HTML File, CSS, JavaScript, PHP File, SQL File and XAMPP(DataBase). 
+
 Project takes Form data as a String, then sends Form data to DataBase, then Parses data as JSON, then lastly displays DataBase data via graphs/charts(chart.js).
 Form is in "WebProgramming_P3.html", Visualization is in "WebProgramming_P2.php".
 Experimentation Proof is in "WebProgrammingPresentaion_GANGABRIEL.pptx"
