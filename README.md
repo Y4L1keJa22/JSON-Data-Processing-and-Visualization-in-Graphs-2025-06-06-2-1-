@@ -1,5 +1,5 @@
 # JSON-Data-Processing-and-Visualization-in-Graphs-2025-06-06
-This Project was made for an individual Class Project nearing the end of my 2nd Grade 1st Semester, majoring in Computer Engineering, in Gachon University, Global Campus(South Korea). 
+This Project was made for an individual Class Project in my Web Programming Class, nearing the end of my 2nd Grade 1st Semester, majoring in Computer Engineering, in Gachon University, Global Campus(South Korea). 
 Last Update: 2025-06-06 17:00:00
 
 WebPage Project that uses HTML File, CSS, JavaScript, PHP File, SQL File and XAMPP(DataBase). 
