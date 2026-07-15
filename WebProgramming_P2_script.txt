@@ -1,0 +1,71 @@
+const ctx = document.getElementById('sigma');
+let chart;
+let graphs=['bar','line','pie','doughnut','polarArea','radar'];
+let c=0;
+
+createChart(graphs[c])
+
+function createChart(type){
+	fetch("WebProgramming_P2_script.php")
+	.then((response) => {
+		return response.json(); //parses response(body text) as json
+	})
+	.then((data) => {
+		chart = new Chart(ctx, {
+			type: type,
+			data: {
+				labels: data.map(row => row.date), //data.map(function (a){return a.date}). map function returns an array of the array
+				datasets: [{
+					label: data.map(row => row.date).reduce((earliest, current) => {
+							const currentDate = new Date(current)
+							const earliestDate = new Date(earliest)
+							return currentDate < earliestDate ? current : earliest
+						}) + " ~ " + data.map(row => row.date).reduce((latest, current) => {
+							const currentDate = new Date(current)
+							const latestDate = new Date(latest)
+							return currentDate > latestDate ? current : latest
+						}),
+					//data.map(row => row.date)[0].substring(0,7) + '~' + data.map(row => row.date)[graphs.length].substring(0,7), 
+					data: data.map(row => row.income),
+				}]
+			},
+			options: {
+				scales: {
+					y: {
+						beginAtZero: false
+					}
+				}
+			}
+		})
+		console.log(data)
+	})
+	
+};
+
+let lim = graphs.length-1;
+
+function previousGraph(){
+	c--
+	if (c<0){
+		c=lim
+	}
+	chart.destroy()
+	createChart(graphs[c])
+	
+	console.log(c)
+	console.log(graphs[c])
+};
+
+function nextGraph(){
+	c++
+	if (c>lim){
+		c=0
+	}
+	chart.destroy()
+	createChart(graphs[c])
+
+	console.log(c)
+	console.log(graphs[c])
+};
+
+

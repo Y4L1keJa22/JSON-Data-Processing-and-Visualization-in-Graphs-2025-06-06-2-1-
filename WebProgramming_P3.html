@@ -1,0 +1,40 @@
+<head>
+<link rel="stylesheet" href="WebProgramming_P3.css"> <!--css file here-->
+</head>
+<body id="forme">
+<section class="contact-form">
+  <h1>Daily Income Form</h1>
+  
+  <form action="WebProgramming_P3.php" method="post"> <!--php file here. use post method instead of default get method so data is not appended into url-->
+    
+    <div class="input-group">
+      <label for="id">id# :</label>
+      <input id="id" name="id" type="number"/>
+    </div>
+    
+    <div class="input-group">
+      <label for="date">Date :</label>
+      <input id="date" name="date" type="date"/>
+    </div>
+    
+    <div class="input-group">
+      <label for="income">Income :</label>
+	  <input id="income" name="income" type="number"/>
+    </div>
+    
+    <div class="input-group">
+      <label for="comments">Comments (Optional)</label>
+      <textarea id="comments" name="comments" rows="6" cols="65"></textarea>
+    </div>
+
+    <input name="secret" type="hidden" value="1b3a9374-1a8e-434e-90ab-21aa7b9b80e7"/>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<div class="results">
+  <h2>Form Data</h2>
+  <pre></pre>
+</div>
+<script src="WebProgramming_P3.js"></script> <!--js file here-->
+</body>
